@@ -1,6 +1,14 @@
 package maven.example.basic;
 import java.util.stream.Stream;
+import org.apache.commons.lang3.StringUtils;
+
 public class Application {
+
+    //Añadiendo funcionalidad Apache Fun
+    public int countWords(String words){
+        String[] separateWords = StringUtils.split(words, ' ');
+        return (separateWords == null)? 0 : separateWords.length;
+    }
 
     //Añadiendo un método que utiliza funcionalidades de Java 9 +
     public void excecuteStream(){
@@ -18,5 +26,11 @@ public class Application {
         System.out.println ("Starting Application");
         Application app = new Application();
         app.excecuteStream();
+        //usando Apache Fun countWords
+        int count= app.countWords("I have four words");
+        System.out.println("HE CONTADO :" + count + " PALABRAS");
     }
+
+
+
 }
