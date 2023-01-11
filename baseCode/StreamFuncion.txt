@@ -1,0 +1,10 @@
+//incluir en los imports
+import java.util.stream.Stream;
+
+//incluir en la clase Application
+public void excecuteStream(){
+        long sum= Stream.iterate(0, i -> i<=1000, i-> i+1)
+                .mapToInt(s -> s)
+                .sum();
+        System.out.println("SERIAL SUM REDUCTION USANDO SUM: " + sum);
+    }
